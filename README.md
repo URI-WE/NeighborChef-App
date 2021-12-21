@@ -1,16 +1,22 @@
-# neighborchefapp
+# Neighbor Chef App
 
-A new Flutter project.
+> It is Neighbor Chef, a platform that creates a cooking culture with neighbors.
 
-## Getting Started
+## Feature
 
-This project is a starting point for a Flutter application.
+- Recipe Share
+- Food Share
+- Cooking Class
+- Village
 
-A few resources to get you started if this is your first Flutter project:
+### Recipe Share
+Recipe Share is a service that allows users to experience a variety of dishes with existing recipes and recipes registered.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Food Share
+Food Share is a service that allows users to distribute or trade their dishes to their neighbors.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Cooking Class
+Cooking Class is a service that allows culinary experts to open cooking classes to recruit people.
+
+### Village
+Village is an online franchise that guarantees reliability in recipes, lectures, and transactions, and helps you expand your business by recruiting members.
