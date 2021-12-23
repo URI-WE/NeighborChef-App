@@ -17,7 +17,7 @@ Widget sideBar(BuildContext context) {
     child: Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: [
+        children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(color: Colors.white),
             child: Text('empty'),
@@ -42,22 +42,18 @@ Widget sideBar(BuildContext context) {
 
 Widget navigationButton(BuildContext context,
     {var buttonname = 'None Button', icon = Icons.error, var id = ''}) {
-  return SizedBox(
-    width: 400,
-    height: 60,
-    child: TextButton.icon(
-      icon: Icon(
-        (icon),
-        size: 30,
-        color: Colors.orange,
-      ),
-      label: Text(
-        buttonname,
-        style: TextStyle(color: Colors.black),
-      ),
-      onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => id));
-      },
+  return ListTile(
+    leading: Icon(
+      icon,
+      size: 30,
+      color: Colors.orange,
     ),
+    title: Text(
+      buttonname,
+      style: TextStyle(color: Colors.black),
+    ),
+    onTap: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => id));
+    },
   );
 }
