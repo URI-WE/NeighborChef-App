@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
 import 'package:neighborchefapp/widgets/etc/searchbar.dart';
+import 'package:neighborchefapp/widgets/etc/recommandedrecipe.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -35,6 +36,10 @@ class _MainPageState extends State<MainPage> {
             '''    Recommended''',
             style: TextStyle(color: Colors.black, fontSize: 20),
           ),
+          Container(
+            height: 330,
+            child: recommandedRecipe(),
+          )
         ],
       ),
     );
