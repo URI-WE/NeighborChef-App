@@ -17,10 +17,10 @@ Widget searchbar() {
         fillColor: Colors.white,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)),
-            borderSide: BorderSide(color: Colors.grey, width: 4)),
+            borderSide: BorderSide(color: Color(0xFFEBEFF2), width: 3)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide(color: Colors.grey, width: 4)),
+            borderSide: BorderSide(color: Color(0xFFEBEFF2), width: 3)),
       ),
     ),
   );
