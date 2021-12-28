@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List<String> recipeName = [
   'pankace',
   'chiken',
@@ -8,7 +10,8 @@ List<String> recipeName = [
 ];
 List<String> authorName = [
   'Jang',
-  'Moon,' 'Kim',
+  'Moon,',
+  'Kim',
   'Lim',
   'Jung',
   'authorName',
@@ -21,7 +24,13 @@ List<String> description = [
   'Jung hwan',
   'dexcription',
 ];
-List<String> bookmark = ['true', 'false', 'flase', 'false', 'true'];
+List bookmark = [
+  Icons.bookmark,
+  Icons.bookmark_border,
+  Icons.bookmark_border,
+  Icons.bookmark,
+  Icons.bookmark_border,
+];
 List<String> recipePicture = [
   'https://picsum.photos/250?image=1',
   'https://picsum.photos/250?image=2',
