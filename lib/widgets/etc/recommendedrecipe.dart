@@ -11,35 +11,35 @@ Widget recommandedRecipe() {
           authorName: authorName[0],
           description: description[0],
           recipePicture: recipePicture[0],
-          bookmark: bookmark[0],
+          bookmarkIcon: bookmark[0],
           cooler: const Color(0xFFD18A8A)),
       recipe(
           recipeName: recipeName[1],
           authorName: authorName[1],
           description: description[1],
           recipePicture: recipePicture[1],
-          bookmark: bookmark[1],
+          bookmarkIcon: bookmark[1],
           cooler: const Color(0xFF9E6868)),
       recipe(
           recipeName: recipeName[2],
           authorName: authorName[2],
           description: description[2],
           recipePicture: recipePicture[2],
-          bookmark: bookmark[2],
+          bookmarkIcon: bookmark[2],
           cooler: const Color(0xFFD94E4E)),
       recipe(
           recipeName: recipeName[3],
           authorName: authorName[3],
           description: description[3],
           recipePicture: recipePicture[3],
-          bookmark: bookmark[3],
+          bookmarkIcon: bookmark[3],
           cooler: const Color(0xFF521D1D)),
       recipe(
           recipeName: recipeName[4],
           authorName: authorName[4],
           description: description[4],
           recipePicture: recipePicture[4],
-          bookmark: bookmark[4],
+          bookmarkIcon: bookmark[4],
           cooler: const Color(0xFF523636))
     ],
   );
@@ -49,7 +49,7 @@ Widget recipe(
     {var recipeName = 'Error',
     var authorName = 'Error',
     var description = 'network Error check your network plz',
-    var bookmark = 'false',
+    bookmarkIcon = Icons.bookmark_border,
     var recipePicture = 'https://picsum.photos/250?image=9',
     cooler = Color}) {
   return Container(
@@ -82,7 +82,10 @@ Widget recipe(
               Positioned(
                 left: 156,
                 child: Container(
-                  child: Icon(Icons.bookmark),
+                  child: Icon(
+                    bookmarkIcon,
+                    color: Colors.white,
+                  ),
                   height: 44,
                   width: 44,
                   decoration: BoxDecoration(
