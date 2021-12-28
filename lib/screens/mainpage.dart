@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
             padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Column(
               children: [
-                searchbar(),
+                searchbar(context),
               ],
             ),
           ),
