@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
 import 'package:neighborchefapp/widgets/etc/searchbar.dart';
-import 'package:neighborchefapp/widgets/etc/recommandedrecipe.dart';
+import 'package:neighborchefapp/widgets/etc/recommendedrecipe.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  var pageName = 'MainPage';
+  var pageName = 'Main';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,15 +26,33 @@ class _MainPageState extends State<MainPage> {
             pagename: pageName,
             //api를 통한 계정 프로필 사진 추가
           ),
-          Text(
-            '''   What would you 
-   like to cook?''',
-            style: TextStyle(fontSize: 24),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: Text(
+                'What would you \nlike to cook?',
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
           ),
-          searchbar(),
-          Text(
-            '''    Recommended''',
-            style: TextStyle(color: Colors.black, fontSize: 20),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            child: Column(
+              children: [
+                searchbar(context),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: Text(
+                'Recommended',
+                style: TextStyle(fontSize: 24),
+              ),
+            ),
           ),
           Container(
             height: 330,
