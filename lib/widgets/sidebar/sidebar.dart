@@ -4,6 +4,7 @@ import 'package:neighborchefapp/screens/foodshare.dart';
 import 'package:neighborchefapp/screens/newpost.dart';
 import 'package:neighborchefapp/screens/sharedrecipe.dart';
 import 'package:neighborchefapp/screens/village.dart';
+import 'package:neighborchefapp/screens/mypage/myprofile.dart';
 
 Widget sideBar(BuildContext context) {
   var newpost = 'New Post';
@@ -11,16 +12,49 @@ Widget sideBar(BuildContext context) {
   var foodshare = 'Food share';
   var cookingclass = 'Cooking Class';
   var village = 'Village';
-
+  var userName = 'pepper';
+  var profilePicture = 'https://picsum.photos/250?image=100';
   return Container(
-    width: MediaQuery.of(context).size.width * 2 / 3,
+    width: MediaQuery.of(context).size.width * 1 / 2,
     child: Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.white),
-            child: Text('empty'),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15, 170, 15, 50),
+            child: Container(
+              height: 100,
+              width: 150,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Color(0xFFF5F5F5)),
+              child: Row(
+                children: [
+                  InkWell(
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          image: DecorationImage(
+                              image: NetworkImage(profilePicture))),
+                    ),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MyProfile()));
+                    },
+                  ),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+                        child: Text(userName),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
           ),
           navigationButton(context,
               buttonname: newpost, icon: Icons.chat, id: NewPost()),
@@ -34,6 +68,21 @@ Widget sideBar(BuildContext context) {
               buttonname: cookingclass, icon: Icons.class_, id: CookingClass()),
           navigationButton(context,
               buttonname: village, icon: Icons.home, id: Village()),
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 160, 0, 0),
+            child: ListTile(
+              leading: Icon(
+                Icons.logout,
+                size: 24,
+                color: Colors.grey,
+              ),
+              title: Text(
+                'Loguut',
+                style: TextStyle(fontSize: 11),
+              ),
+              onTap: () {},
+            ),
+          )
         ],
       ),
     ),
