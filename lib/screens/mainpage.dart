@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neighborchefapp/screens/mypage/myprofile.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
 import 'package:neighborchefapp/widgets/etc/searchbar.dart';
@@ -24,6 +25,7 @@ class _MainPageState extends State<MainPage> {
           appBar(
             context,
             pagename: pageName,
+            id: MyProfile(),
             //api를 통한 계정 프로필 사진 추가
           ),
           Padding(
@@ -40,7 +42,7 @@ class _MainPageState extends State<MainPage> {
             padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Column(
               children: [
-                searchbar(),
+                searchbar(context),
               ],
             ),
           ),

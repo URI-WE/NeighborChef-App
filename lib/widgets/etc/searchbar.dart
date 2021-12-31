@@ -1,27 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:neighborchefapp/screens/searchpage.dart';
 
-Widget searchbar() {
+Widget searchbar(BuildContext context) {
   return Padding(
-    padding: EdgeInsets.all(20),
-    child: TextField(
-      decoration: InputDecoration(
-        prefixIcon: Icon(
-          Icons.search,
-          color: Colors.black,
-          size: 30,
+      padding: EdgeInsets.all(10),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Color(0xFFFFEBEFF2), width: 3)),
+        child: ListTile(
+          leading: Icon(
+            Icons.search,
+            size: 30,
+          ),
+          title: Text(
+            'Search',
+            style: TextStyle(fontSize: 20),
+          ),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SearchPage()));
+          },
         ),
-        hintText: 'Search',
-        hintStyle: TextStyle(color: Colors.grey, fontSize: 20),
-        filled: true,
-        fillColor: Colors.white,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
-            borderSide: BorderSide(color: Color(0xFFEBEFF2), width: 3)),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            borderSide: BorderSide(color: Color(0xFFEBEFF2), width: 3)),
-      ),
-    ),
-  );
+      ));
 }
