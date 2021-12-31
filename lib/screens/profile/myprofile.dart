@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/screens/mypage/bookmarkpage.dart';
+import 'package:neighborchefapp/screens/profile/bookmarkpage.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
-import 'package:neighborchefapp/screens/mypage/myprofile.dart';
+import 'package:neighborchefapp/screens/profile/myprofile.dart';
 import 'package:neighborchefapp/widgets/etc/piclist.dart';
 import 'package:neighborchefapp/api/recommendedrecipeapi.dart';
+import 'package:neighborchefapp/screens/profile/post_list.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({Key? key}) : super(key: key);
@@ -122,14 +123,27 @@ class _MyProfileState extends State<MyProfile> {
               Padding(
                   padding: EdgeInsets.fromLTRB(20, 30, 0, 0),
                   child: Row(
-                    children: [Text('My Page', style: TextStyle(fontSize: 14))],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('My Page', style: TextStyle(fontSize: 14)),
+                      TextButton(
+                        child: Text(
+                          'All',
+                          style:
+                              TextStyle(fontSize: 14, color: Color(0xFFFF7E55)),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyPostList()));
+                        },
+                      )
+                    ],
                   )),
               Container(
                 color: Colors.grey,
               ),
-              Expanded(
-                child: myHomePageState(recipePicture),
-              )
             ],
           ),
         ],
