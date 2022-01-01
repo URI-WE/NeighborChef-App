@@ -9,7 +9,7 @@ Widget appBar(BuildContext context,
     centerTitle: true,
     title: Text(
       pagename,
-      style: TextStyle(color: Colors.black, fontSize: 24),
+      style: TextStyle(color: Colors.black, fontSize: 24, fontFamily: 'poiret'),
     ),
     actions: [
       IconButton(
