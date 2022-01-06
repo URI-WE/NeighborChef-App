@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/screens/searchpage.dart';
+import 'package:neighborchefapp/screens/etc/account_search.dart';
 
 Widget searchbar(BuildContext context) {
   return Padding(
@@ -19,8 +19,8 @@ Widget searchbar(BuildContext context) {
             style: TextStyle(fontSize: 20),
           ),
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SearchPage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AccountSearch()));
           },
         ),
       ));
