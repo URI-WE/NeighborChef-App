@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import 'package:flutter/material.dart';
 import 'package:neighborchefapp/screens/mypage/myprofile.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
@@ -65,3 +66,6 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
+=======
+
+>>>>>>> Stashed changes

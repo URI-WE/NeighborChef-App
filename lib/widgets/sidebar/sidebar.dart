@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/screens/cookingclass.dart';
-import 'package:neighborchefapp/screens/foodshare.dart';
-import 'package:neighborchefapp/screens/newpost.dart';
-import 'package:neighborchefapp/screens/sharedrecipe.dart';
+import 'package:neighborchefapp/screens/cooking_class/cooking_class_post.dart';
+import 'package:neighborchefapp/screens/food_share/food_shared_post.dart';
+import 'package:neighborchefapp/screens/etc/newpost.dart';
+import 'package:neighborchefapp/screens/recipe_share/sharedrecipe.dart';
 import 'package:neighborchefapp/screens/village.dart';
-import 'package:neighborchefapp/screens/mypage/myprofile.dart';
+import 'package:neighborchefapp/screens/profile/myprofile.dart';
 
 Widget sideBar(BuildContext context) {
   var newpost = 'New Post';
@@ -63,9 +63,13 @@ Widget sideBar(BuildContext context) {
               icon: Icons.book_online,
               id: SharedRecipe()),
           navigationButton(context,
-              buttonname: foodshare, icon: Icons.food_bank, id: FoodShare()),
+              buttonname: foodshare,
+              icon: Icons.food_bank,
+              id: FoodSharedPost()),
           navigationButton(context,
-              buttonname: cookingclass, icon: Icons.class_, id: CookingClass()),
+              buttonname: cookingclass,
+              icon: Icons.class_,
+              id: CookingClassPost()),
           navigationButton(context,
               buttonname: village, icon: Icons.home, id: Village()),
           Padding(
