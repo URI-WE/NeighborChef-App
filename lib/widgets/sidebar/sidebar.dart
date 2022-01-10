@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/screens/cooking_class/cooking_class_post.dart';
 import 'package:neighborchefapp/screens/food_share/food_shared_post.dart';
 import 'package:neighborchefapp/screens/etc/newpost.dart';
-import 'package:neighborchefapp/screens/recipe_share/sharedrecipe.dart';
+//import 'package:neighborchefapp/screens/recipe_share/sharedrecipe.dart';
 import 'package:neighborchefapp/screens/village.dart';
 import 'package:neighborchefapp/screens/profile/myprofile.dart';
 
@@ -58,10 +58,12 @@ Widget sideBar(BuildContext context) {
           ),
           navigationButton(context,
               buttonname: newpost, icon: Icons.chat, id: NewPost()),
-          navigationButton(context,
-              buttonname: sharedrecipes,
-              icon: Icons.book_online,
-              id: SharedRecipe()),
+          navigationButton(
+            context,
+            buttonname: sharedrecipes,
+            icon: Icons.book_online,
+            //     id: SharedRecipe(),
+          ),
           navigationButton(context,
               buttonname: foodshare,
               icon: Icons.food_bank,
