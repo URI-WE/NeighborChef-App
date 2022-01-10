@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/widgets/styles/sttyle_appbar.dart';
+import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -29,13 +29,13 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          styleAppBar(
+          /*StyleAppBar(
             context,
             styleAppBarTitle: pageName,
             styleAppBarIconText: 'Next',
             styleAppBarIcon: null,
             styleAppBarIconTextColor: Colors.red,
-          ),
+          ),*/
           Padding(
             padding: EdgeInsets.all(5),
             child: Row(
