@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/screens/profile/bookmarkpage.dart';
+//import 'package:neighborchefapp/screens/profile/bookmarkpage.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
 import 'package:neighborchefapp/screens/profile/myprofile.dart';
@@ -31,10 +31,12 @@ class _MyProfileState extends State<MyProfile> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          appBar(context,
-              pagename: pageName,
-              icon: Icons.bookmark_border,
-              id: BookMarkPage()),
+          appBar(
+            context,
+            pagename: pageName,
+            icon: Icons.bookmark_border,
+            // id: BookMarkPage(),
+          ),
           Column(
             children: [
               Padding(
