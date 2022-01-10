@@ -23,14 +23,18 @@ Widget appBar(
     actions: [
       InkWell(
         child: Container(
-            width: 60,
-            height: 60,
+            width: 50,
+            height: 40,
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(icon),
+                  Icon(
+                    icon,
+                    size: 33,
+                    color: Colors.grey,
+                  ),
                   Text(
                     text,
                     style: TextStyle(fontSize: 10, color: Colors.black),

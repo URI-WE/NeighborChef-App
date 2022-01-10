@@ -22,7 +22,7 @@ List<String> description = [
   'gurger king',
   'I am gay',
   'Jung hwan',
-  'dexcription',
+  'description',
 ];
 List bookmark = [
   Icons.bookmark,

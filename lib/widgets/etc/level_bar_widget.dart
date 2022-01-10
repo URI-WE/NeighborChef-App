@@ -5,7 +5,6 @@ Widget LevelBar(int level, int per) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      SizedBox(height: 100),
       Row(
         children: [
           Text(

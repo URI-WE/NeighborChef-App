@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 //import 'package:neighborchefapp/screens/profile/bookmarkpage.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
-import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
+import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:neighborchefapp/screens/profile/myprofile.dart';
 import 'package:neighborchefapp/widgets/etc/piclist.dart';
 import 'package:neighborchefapp/api/recommendedrecipeapi.dart';
 import 'package:neighborchefapp/screens/profile/post_list.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
+import 'package:neighborchefapp/widgets/etc/level_bar_widget.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({Key? key}) : super(key: key);
@@ -35,7 +36,8 @@ class _MyProfileState extends State<MyProfile> {
             context,
             pagename: pageName,
             icon: Icons.bookmark_border,
-            // id: BookMarkPage(),
+            text: '',
+            //  id: BookMarkPage()
           ),
           Column(
             children: [
@@ -55,7 +57,8 @@ class _MyProfileState extends State<MyProfile> {
                           Text(
                             '76 Gajeongbuk-ro, Jang-dong, \nYuseong-gu, Daejeon',
                             style: TextStyle(fontSize: 8),
-                          )
+                          ),
+                          LevelBar(38, 69),
                         ],
                       ),
                     ),
@@ -145,6 +148,7 @@ class _MyProfileState extends State<MyProfile> {
                     ],
                   )),
               Container(
+                height: MediaQuery.of(context).size.height * 1 / 3,
                 color: Colors.grey,
               ),
             ],
