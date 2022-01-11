@@ -32,12 +32,13 @@ class _MyProfileState extends State<MyProfile> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          appBar(
+          styleAppBar(
             context,
-            pagename: pageName,
-            icon: Icons.bookmark_border,
-            text: '',
-            //  id: BookMarkPage()
+            styleAppBarIcon: Icons.bookmark_border,
+            styleAppBarIconText: 'List',
+            styleAppBarTitle: pageName,
+            styleAppBarIcon2: null,
+            styleAppBarIconText2: '',
           ),
           Column(
             children: [
