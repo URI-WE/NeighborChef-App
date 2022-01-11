@@ -9,16 +9,20 @@ class DetailRecipe5 extends StatefulWidget {
 }
 
 class _DetailRecipe5State extends State<DetailRecipe5> {
+  var pageName = 'Recipe';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          appBar(
+          styleAppBar(
             context,
-            text: '',
-            icon: Icons.bookmark_border,
+            styleAppBarIcon2: Icons.more_horiz,
+            styleAppBarIconText2: '',
+            styleAppBarIcon: Icons.bookmark_border_outlined,
+            styleAppBarIconText: '',
+            styleAppBarTitle: pageName,
           )
         ],
       ),
