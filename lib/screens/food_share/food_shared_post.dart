@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
-//import 'package:neighborchefapp/widgets/styles/sttyle_appbar.dart';
+import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 
 class FoodSharedPost extends StatefulWidget {
   const FoodSharedPost({Key? key}) : super(key: key);
@@ -17,13 +17,11 @@ class _FoodSharedPostState extends State<FoodSharedPost> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          /* StyleAppBar(
-            context,
-            styleAppBarTitle: pageName,
-            styleAppBarIconText: 'Next',
-            styleAppBarIcon: null,
-            styleAppBarIconTextColor: Colors.red,
-          ),*/
+          // appBar(context,
+          // styleAppBarIcon: null,
+          // styleAppBarText: 'next',
+          // styleAppbarTitle: 'Food share',
+          // styleAppBarNavigate: null)
           Padding(
             padding: EdgeInsets.all(5),
             child: Row(
