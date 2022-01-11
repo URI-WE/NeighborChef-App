@@ -22,12 +22,13 @@ class _MainPageState extends State<MainPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appBar(
+          styleAppBar(
             context,
-            pagename: pageName,
-            id: MyProfile(),
-            text: '',
-            //api를 통한 계정 프로필 사진 추가
+            styleAppBarIconText: '',
+            styleAppBarNavigate: MyProfile(),
+            styleAppBarTitle: pageName,
+            styleAppBarIcon2: null,
+            styleAppBarIconText2: '',
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(0, 30, 0, 0),

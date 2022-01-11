@@ -3,7 +3,7 @@ import 'package:neighborchefapp/screens/cooking_class/cooking_class_post.dart';
 import 'package:neighborchefapp/screens/food_share/food_shared_post.dart';
 import 'package:neighborchefapp/screens/etc/newpost.dart';
 //import 'package:neighborchefapp/screens/recipe_share/sharedrecipe.dart';
-import 'package:neighborchefapp/screens/village.dart';
+import 'package:neighborchefapp/screens/village/village.dart';
 import 'package:neighborchefapp/screens/profile/myprofile.dart';
 
 Widget sideBar(BuildContext context) {
