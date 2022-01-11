@@ -29,13 +29,12 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          /*StyleAppBar(
-            context,
-            styleAppBarTitle: pageName,
-            styleAppBarIconText: 'Next',
-            styleAppBarIcon: null,
-            styleAppBarIconTextColor: Colors.red,
-          ),*/
+          styleAppBar(context,
+              styleAppBarIcon: null,
+              styleAppBarIconText: 'next',
+              styleAppBarIconTextColor: Colors.red,
+              styleAppBarTitle: pageName,
+              styleAppBarNavigate: null),
           Padding(
             padding: EdgeInsets.all(5),
             child: Row(
@@ -59,7 +58,7 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
             padding: EdgeInsets.all(5),
             child: styleButton(
               context,
-              styleButtonIcon: Icons.image,
+              styleButtonIcon: Icons.image_search_outlined,
               styleButtonWidth: 78,
               styleButtonHeight: 50,
               styleButtonColor: Color(0xFFFFFFFF),
@@ -98,10 +97,18 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                         child: Container(
                             width: 100,
                             height: 40,
-                            child: Column(
+                            child: Row(
                               children: [
-                                Text('total time'),
-                                Text('Pick'),
+                                Icon(
+                                  Icons.update,
+                                  size: 40,
+                                ),
+                                Column(
+                                  children: [
+                                    Text('total time'),
+                                    Text('Pick'),
+                                  ],
+                                )
                               ],
                             )),
                       ),
@@ -110,10 +117,18 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                         child: Container(
                             width: 100,
                             height: 40,
-                            child: Column(
+                            child: Row(
                               children: [
-                                Text('difficulty'),
-                                Text('Pick'),
+                                Icon(
+                                  Icons.directions_run,
+                                  size: 40,
+                                ),
+                                Column(
+                                  children: [
+                                    Text('difficulty'),
+                                    Text('Pick'),
+                                  ],
+                                )
                               ],
                             )),
                       )
