@@ -39,7 +39,7 @@ Widget styleAppBar(
         ),
       ),
       Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+        padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
         child: TextButton.icon(
           icon: Icon(
             styleAppBarIcon,
