@@ -31,9 +31,9 @@ class _MainPageState extends State<MainPage> {
             styleAppBarIconText2: '',
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: Text(
                 'What would you \nlike to cook?',
                 style: TextStyle(fontSize: 24, fontFamily: 'poiret'),
