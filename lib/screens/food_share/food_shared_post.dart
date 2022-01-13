@@ -17,11 +17,13 @@ class _FoodSharedPostState extends State<FoodSharedPost> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // appBar(context,
-          // styleAppBarIcon: null,
-          // styleAppBarText: 'next',
-          // styleAppbarTitle: 'Food share',
-          // styleAppBarNavigate: null)
+          styleAppBar(context,
+              styleAppBarIcon: null,
+              styleAppBarIconText: 'next',
+              styleAppBarIconTextColor: Colors.red,
+              styleAppBarTitle: pageName,
+              styleAppBarNavigate: null,
+              styleAppBarIcon2: null),
           Padding(
             padding: EdgeInsets.all(5),
             child: Row(
@@ -45,7 +47,7 @@ class _FoodSharedPostState extends State<FoodSharedPost> {
             padding: EdgeInsets.all(5),
             child: styleButton(
               context,
-              styleButtonIcon: Icons.image,
+              styleButtonIcon: Icons.image_search_outlined,
               styleButtonWidth: 78,
               styleButtonHeight: 50,
               styleButtonColor: Color(0xFFFFFFFF),
@@ -57,70 +59,125 @@ class _FoodSharedPostState extends State<FoodSharedPost> {
           ),
           Padding(
             padding: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                fillColor: Color(0xffF6F6F6),
-                filled: true,
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red, width: 4),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    )),
-                labelText: 'Recipe Name',
+            child: Center(
+              child: TextField(
+                decoration: InputDecoration(
+                  fillColor: Color(0xffF6F6F6),
+                  filled: true,
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xffF6F6F6), width: 4.0),
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFFF6F6F6), width: 4.0),
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  hintText: 'Recipe Name',
+                ),
               ),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(15),
             child: Container(
-              color: Color(0xffF6F6F6),
+              decoration: BoxDecoration(
+                  color: Color(0xffF6F6F6),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Text('US'),
-                      // TextField(
-                      //   decoration: InputDecoration(),
-                      // ),
-                    ],
-                  ),
                   Padding(
                     padding: EdgeInsets.all(15),
-                    child: Container(
-                      width: 200,
-                      height: 100,
-                      color: Color(0xffE2E2E2),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            'US',
+                            style: TextStyle(
+                                fontSize: 27, color: Color(0xff4ECB71)),
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                  Text('Create Date'),
-                  Container(
-                    width: 30,
-                    height: 30,
-                  ),
-                  Text('Shelf Date'),
-                  Container(
-                    width: 30,
-                    height: 30,
                   ),
                   Padding(
                     padding: EdgeInsets.all(20),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        fillColor: Color(0xffF6F6F6),
-                        filled: true,
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red, width: 4),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                            )),
-                        labelText: 'Recipe Name',
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          fillColor: Color(0xffE2E2E2),
+                          filled: true,
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xffE2E2E2), width: 4.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xFFE2E2E2), width: 4.0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          hintText: 'Explanation',
+                        ),
                       ),
                     ),
                   ),
                   Container(
-                    width: 30,
-                    height: 100,
-                  )
+                    height: 80,
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Category',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: Color(0xffE2E2E2),
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(5),
+                              bottomRight: Radius.circular(5))),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Category',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

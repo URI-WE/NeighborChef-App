@@ -11,17 +11,6 @@ class NewPostShareRecipe extends StatefulWidget {
 }
 
 class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
-  final ImagePicker _picker = ImagePicker();
-  List<XFile> _pickedImg = [];
-  Future<void> _pickImg() async {
-    final List<XFile>? images = await _picker.pickMultiImage();
-    if (images != null) {
-      setState(() {
-        _pickedImg = images;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var pageName = 'New Post';
@@ -90,7 +79,7 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(10),
             child: Container(
               decoration: BoxDecoration(
                   color: Color(0xffF6F6F6),
@@ -98,50 +87,102 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Container(
-                              width: 100,
+                              width: 110,
                               height: 40,
                               child: Row(
                                 children: [
-                                  Icon(
-                                    Icons.update,
-                                    size: 40,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text('total time'),
-                                      Text('Pick'),
-                                    ],
+                                  PopupMenuButton(
+                                      icon: Icon(
+                                        Icons.update,
+                                        size: 40,
+                                      ),
+                                      itemBuilder: (context) => [
+                                            PopupMenuItem(
+                                              child: Text("30"),
+                                              value: 1,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("60"),
+                                              value: 2,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("90"),
+                                              value: 3,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("120"),
+                                              value: 4,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("150"),
+                                              value: 5,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("180"),
+                                              value: 6,
+                                            )
+                                          ]),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                                    child: Container(
+                                      child: Column(
+                                        children: [
+                                          Text('total time'),
+                                          Text('Pick'),
+                                        ],
+                                      ),
+                                    ),
                                   )
                                 ],
                               )),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Container(
-                              width: 100,
+                              width: 110,
                               height: 40,
                               child: Row(
                                 children: [
-                                  Icon(
-                                    Icons.directions_run,
-                                    size: 40,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text('difficulty'),
-                                      Text('Pick'),
-                                    ],
+                                  PopupMenuButton(
+                                      icon: Icon(
+                                        Icons.update,
+                                        size: 40,
+                                      ),
+                                      itemBuilder: (context) => [
+                                            PopupMenuItem(
+                                              child: Text("Easy"),
+                                              value: 1,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("Normal"),
+                                              value: 2,
+                                            ),
+                                            PopupMenuItem(
+                                              child: Text("Hard"),
+                                              value: 3,
+                                            ),
+                                          ]),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                                    child: Container(
+                                      child: Column(
+                                        children: [
+                                          Text('Difficulty'),
+                                          Text('Pick'),
+                                        ],
+                                      ),
+                                    ),
                                   )
                                 ],
                               )),
-                        )
+                        ),
                       ],
                     ),
                   ),
