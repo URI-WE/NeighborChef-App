@@ -1,15 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.neighborchefapp">
+    package="com.csdcorp.local_image_provider">
    <application
         android:label="neighborchefapp"
         android:icon="@mipmap/ic_launcher">
         <activity
+      
+            android:requestLegacyExternalStorage="true"
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
