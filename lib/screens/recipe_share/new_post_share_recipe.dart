@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
@@ -18,7 +16,7 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
   List<XFile> _pickedImages = [];
   String dropDownValue1 = '10 Minutes';
   String dropDownValue2 = 'Easy';
-  var items1 = [
+  List<String> items1 = [
     '10 Minutes',
     '30 Minutes',
     '60 Minutes',
@@ -127,60 +125,114 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Padding(
-                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.update, size: 40),
-                                  Column(
-                                    children: [
-                                      Text('Total Time'),
-                                      DropdownButton(
-                                        value: dropDownValue1,
-                                        items: items1.map((String items) {
-                                          return DropdownMenuItem(
-                                            value: items,
-                                            child: Text(items),
-                                          );
-                                        }).toList(),
-                                        onChanged: (String? newValue) {
-                                          setState(() {
-                                            dropDownValue1 = newValue!;
-                                            print(newValue);
-                                          });
-                                        },
-                                      ),
-                                    ],
-                                  ),
+                          InkWell(
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.update, size: 40),
+                                    Column(
+                                      children: [
+                                        Text('Total Time'),
+                                        Text('Pick')
+                                      ],
+                                    ),
+                                  ],
+                                )),
+                            onTap: () => showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('Pick Recruitment'),
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('10 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('30 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('60 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('90 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('120 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('150 minuts')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('180 minuts')),
+                                  ],
+                                ),
+                                actions: <Widget>[
+                                  TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'cancle'),
+                                      child: const Text('cancle')),
+                                  TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'OK'),
+                                      child: const Text('OK'))
                                 ],
-                              )),
-                          Padding(
-                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.directions_run, size: 40),
-                                  Column(
-                                    children: [
-                                      Text('Difficulty'),
-                                      DropdownButton(
-                                        value: dropDownValue2,
-                                        items: items2.map((String items) {
-                                          return DropdownMenuItem(
-                                            value: items,
-                                            child: Text(items),
-                                          );
-                                        }).toList(),
-                                        onChanged: (String? newValue) {
-                                          setState(() {
-                                            dropDownValue2 = newValue!;
-                                            print(newValue);
-                                          });
-                                        },
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                child: Row(
+                                  children: [
+                                    InkWell(
+                                      child: Container(
+                                        child: Row(),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    const Icon(Icons.directions_run, size: 40),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text('Difficulty'),
+                                        Text('Pick')
+                                      ],
+                                    ),
+                                  ],
+                                )),
+                            onTap: () => showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('Pick Recruitment'),
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    TextButton(
+                                        onPressed: () {}, child: Text('Easy')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('Normal')),
+                                    TextButton(
+                                        onPressed: () {},
+                                        child: Text('Difficalt')),
+                                  ],
+                                ),
+                                actions: <Widget>[
+                                  TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'cancle'),
+                                      child: const Text('cancle')),
+                                  TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'OK'),
+                                      child: const Text('OK'))
                                 ],
-                              )),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -235,7 +287,7 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                                       color: Color(0xFFE2E2E2), width: 4.0),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5))),
-                              hintText: 'Category',
+                              hintText: 'ingredients',
                             ),
                           ),
                         ),
@@ -275,30 +327,6 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                        height: 50,
-                        child: SizedBox(
-                            child: SizedBox(
-                          child: Container(
-                            child: Center(
-                              child: IconButton(
-                                  onPressed: () {
-                                    _pickImg();
-                                  },
-                                  icon: Container(
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.6),
-                                          shape: BoxShape.circle),
-                                      child: Icon(
-                                        Icons.image_search,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                      ))),
-                            ),
-                          ),
-                        ))),
                   ],
                 ),
               ),
