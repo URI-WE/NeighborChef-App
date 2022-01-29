@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
 import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:neighborchefapp/screens/etc/post_ok.dart';
 
 class FoodSharedPost extends StatefulWidget {
   const FoodSharedPost({Key? key}) : super(key: key);
@@ -98,7 +99,7 @@ class _FoodSharedPostState extends State<FoodSharedPost> {
               styleAppBarIconText: 'next',
               styleAppBarIconTextColor: Colors.red,
               styleAppBarTitle: pageName,
-              styleAppBarNavigate: null,
+              styleAppBarNavigate: PostOk(),
               styleAppBarIcon2: null),
           Padding(
             padding: EdgeInsets.all(5),
