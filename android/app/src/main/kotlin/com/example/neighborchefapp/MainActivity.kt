@@ -1,4 +1,4 @@
-package com.example.neighborchefapp
+package com.Uri.Neighbor_Chef
 
 import io.flutter.embedding.android.FlutterActivity
 
