@@ -11,12 +11,74 @@ class CookingClassPost extends StatefulWidget {
 }
 
 class _CookingClassPostState extends State<CookingClassPost> {
+  DateTime _selectedDate = DateTime.now();
+  String? _selectedTime;
+  DateTime _selectedDateShelf = DateTime.now();
+  String? _selectedTimeShelf;
+  void _presentDatePicker() {
+    // showDatePicker is a pre-made funtion of Flutter
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2020),
+            lastDate: DateTime.now())
+        .then((pickedDate) {
+      // Check if no date is selected
+      if (pickedDate == null) {
+        return;
+      }
+      setState(() {
+        // using state so that the UI will be rerendered when date is picked
+        _selectedDate = pickedDate;
+      });
+    });
+  }
+
+  Future<void> _show() async {
+    final TimeOfDay? result =
+        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    if (result != null) {
+      setState(() {
+        _selectedTime = result.format(context);
+      });
+    }
+  }
+
+  void _presentDatePickerShelf() {
+    // showDatePicker is a pre-made funtion of Flutter
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2020),
+            lastDate: DateTime(2040))
+        .then((pickedDateShelf) {
+      // Check if no date is selected
+      if (pickedDateShelf == null) {
+        return;
+      }
+      setState(() {
+        // using state so that the UI will be rerendered when date is picked
+        _selectedDateShelf = pickedDateShelf;
+      });
+    });
+  }
+
+  Future<void> _showShelf() async {
+    final TimeOfDay? result =
+        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    if (result != null) {
+      setState(() {
+        _selectedTimeShelf = result.format(context);
+      });
+    }
+  }
+
   var pageName = 'New Post';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
+      body: ListView(
         children: [
           styleAppBar(context,
               styleAppBarIcon: null,
@@ -73,19 +135,151 @@ class _CookingClassPostState extends State<CookingClassPost> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(15),
+                    padding: EdgeInsets.fromLTRB(30, 30, 30, 0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Text(
-                            'US',
-                            style: TextStyle(
-                                fontSize: 27, color: Color(0xff4ECB71)),
-                          ),
-                        )
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.people,
+                              size: 40,
+                            ),
+                            Column(
+                              children: [
+                                Text('Recruitment',
+                                    style: TextStyle(
+                                        color: Color(0xff9B9B9B),
+                                        fontSize: 11)),
+                                Text(
+                                  'Number',
+                                  style: TextStyle(
+                                      color: Color(0xffFF7E55), fontSize: 13),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.directions_run,
+                              size: 40,
+                            ),
+                            Column(
+                              children: [
+                                const Text(
+                                  'Difficulty',
+                                  style: TextStyle(
+                                      color: Color(0xff9B9B9B), fontSize: 11),
+                                ),
+                                const Text(
+                                  'pick',
+                                  style: TextStyle(
+                                      color: Color(0xffFF7E55), fontSize: 13),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.update,
+                              size: 40,
+                            ),
+                            Column(
+                              children: [
+                                const Text(
+                                  'Total Time',
+                                  style: TextStyle(
+                                      color: Color(0xff9B9B9B), fontSize: 11),
+                                ),
+                                const Text(
+                                  'Pick',
+                                  style: TextStyle(
+                                      color: Color(0xffFF7E55), fontSize: 13),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: Container(
+                      height: 1,
+                      width: MediaQuery.of(context).size.width * 4 / 5,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                          child: Text('Created Data'))
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                        child: TextButton(
+                            onPressed: _presentDatePicker,
+                            child: Text(
+                              '${_selectedDate.year}/${_selectedDate.month}/${_selectedDate.day}',
+                              style:
+                                  TextStyle(fontSize: 27, color: Colors.black),
+                            )),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        child: TextButton(
+                            onPressed: _show,
+                            child: Text(
+                              _selectedTime != null ? _selectedTime! : '00:00',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 27),
+                            )),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                          child: Text('shelf Data'))
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                        child: TextButton(
+                            onPressed: _presentDatePickerShelf,
+                            child: Text(
+                              '${_selectedDateShelf.year}/${_selectedDateShelf.month}/${_selectedDateShelf.day}',
+                              style:
+                                  TextStyle(fontSize: 27, color: Colors.black),
+                            )),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        child: TextButton(
+                            onPressed: _showShelf,
+                            child: Text(
+                              _selectedTimeShelf != null
+                                  ? _selectedTimeShelf!
+                                  : '00:00',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 27),
+                            )),
+                      )
+                    ],
                   ),
                   Padding(
                     padding: EdgeInsets.all(20),
