@@ -9,7 +9,7 @@ List<String> recipeName = [
   'recipeName',
 ];
 List<String> authorName = [
-  'Jang',
+  'Neighbor Chef',
   'Moon,',
   'Kim',
   'Lim',
@@ -17,7 +17,7 @@ List<String> authorName = [
   'authorName',
 ];
 List<String> description = [
-  'pancake is gold',
+  'Neighbor Chef pancake',
   'human is first',
   'gurger king',
   'I am gay',
