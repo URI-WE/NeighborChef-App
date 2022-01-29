@@ -4,6 +4,7 @@ import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
 import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:neighborchefapp/widgets/etc/searchbar.dart';
 import 'package:neighborchefapp/widgets/etc/recommended_recipe.dart';
+import 'package:neighborchefapp/test/test_recommended_recipe.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -60,7 +61,7 @@ class _MainPageState extends State<MainPage> {
           ),
           Container(
             height: 330,
-            child: RecommededRecipe(),
+            child: TestRecommendedRecipe(),
           )
         ],
       ),
