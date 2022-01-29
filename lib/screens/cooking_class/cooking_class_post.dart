@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
 import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
+import 'package:neighborchefapp/screens/etc/post_ok.dart';
 //import 'package:neighborchefapp/widgets/styles/sttyle_appbar.dart';
 
 class CookingClassPost extends StatefulWidget {
@@ -85,7 +86,7 @@ class _CookingClassPostState extends State<CookingClassPost> {
               styleAppBarIconText: 'next',
               styleAppBarIconTextColor: Colors.red,
               styleAppBarTitle: pageName,
-              styleAppBarNavigate: null,
+              styleAppBarNavigate: PostOk(),
               styleAppBarIcon2: null),
           Padding(
             padding: EdgeInsets.all(5),
