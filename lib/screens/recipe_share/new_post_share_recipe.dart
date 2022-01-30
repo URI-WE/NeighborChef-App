@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:neighborchefapp/widgets/styles/style_button.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:neighborchefapp/screens/etc/post_ok.dart';
 
 class NewPostShareRecipe extends StatefulWidget {
   const NewPostShareRecipe({Key? key}) : super(key: key);
@@ -13,7 +14,9 @@ class NewPostShareRecipe extends StatefulWidget {
 
 class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
   final ImagePicker _picker = ImagePicker();
+  PickedFile? _imageFile;
   List<XFile> _pickedImages = [];
+
   String dropDownValue1 = '10 Minutes';
   String dropDownValue2 = 'Easy';
   List<String> items1 = [
@@ -42,14 +45,14 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
     var pageName = 'New Post';
     return Scaffold(
         backgroundColor: Colors.white,
-        body: Column(
+        body: ListView(
           children: [
             styleAppBar(context,
                 styleAppBarIcon: null,
                 styleAppBarIconText: 'next',
                 styleAppBarIconTextColor: Colors.red,
                 styleAppBarTitle: pageName,
-                styleAppBarNavigate: null,
+                styleAppBarNavigate: PostOk(),
                 styleAppBarIcon2: null),
             Padding(
               padding: const EdgeInsets.all(5),
@@ -70,28 +73,29 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                 ],
               ),
             ),
-            SizedBox(
-                height: 50,
-                child: SizedBox(
-                    child: SizedBox(
-                  child: Container(
-                    child: Center(
-                      child: IconButton(
-                          onPressed: () {
-                            _pickImg();
-                          },
-                          icon: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.6),
-                                  shape: BoxShape.circle),
-                              child: Icon(
-                                Icons.image_search,
-                                color: Theme.of(context).colorScheme.primary,
-                              ))),
-                    ),
-                  ),
-                ))),
+            // InkWell(
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(image:   )
+            //     ),
+            //   )
+            // ),
+            // SizedBox(
+            //     height: 50,
+            //     child: SizedBox(
+            //         child: SizedBox(
+            //       child: Container(
+            //         child: Center(
+            //           child: IconButton(
+            //               onPressed: () {
+            //                 _pickImg();
+            //               },
+            //               icon: _imageFile == null
+            //                   ? Icon(Icons.image_search)
+            //                   : ),
+            //         ),
+            //       ),
+            //     ))),
             Padding(
               padding: EdgeInsets.all(20),
               child: Center(
@@ -133,8 +137,16 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                                     const Icon(Icons.update, size: 40),
                                     Column(
                                       children: [
-                                        Text('Total Time'),
-                                        Text('Pick')
+                                        Text(
+                                          'Total Time',
+                                          style: TextStyle(
+                                              color: Color(0xff9B9B9B)),
+                                        ),
+                                        Text(
+                                          'Pick',
+                                          style: TextStyle(
+                                              color: Color(0xffFF7E55)),
+                                        )
                                       ],
                                     ),
                                   ],
@@ -197,8 +209,16 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        Text('Difficulty'),
-                                        Text('Pick')
+                                        Text(
+                                          'Difficulty',
+                                          style: TextStyle(
+                                              color: Color(0xff9B9B9B)),
+                                        ),
+                                        Text(
+                                          'Pick',
+                                          style: TextStyle(
+                                              color: Color(0xffFF7E55)),
+                                        )
                                       ],
                                     ),
                                   ],
@@ -296,7 +316,7 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                     Row(
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+                          padding: EdgeInsets.fromLTRB(10, 100, 0, 0),
                           child: Text(
                             'Step',
                             style: TextStyle(
@@ -327,6 +347,404 @@ class _NewPostShareRecipeState extends State<NewPostShareRecipe> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
+                    Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            fillColor: Color(0xffE2E2E2),
+                            filled: true,
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xFFE2E2E2), width: 4.0),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5))),
+                            hintText: 'Descript',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: 50,
+                        child: SizedBox(
+                            child: SizedBox(
+                          child: Container(
+                            child: Center(
+                              child: IconButton(
+                                  onPressed: () {
+                                    _pickImg();
+                                  },
+                                  icon: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          shape: BoxShape.circle),
+                                      child: Icon(Icons.image_search,
+                                          color: Colors.amber, size: 48))),
+                            ),
+                          ),
+                        ))),
                   ],
                 ),
               ),
