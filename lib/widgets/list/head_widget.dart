@@ -1,6 +1,6 @@
 // import 'dart:ui';
 // import 'package:flutter/material.dart';
-// import 'package:neighborchefapp/lib/utils/styles.dart';
+// import 'package:neighborchefapp/utils/styles.dart';
 
 // Widget NameWidget(int index, {double size = 0}) {
 //   return Row(
