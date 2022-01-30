@@ -2,10 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:neighborchefapp/api/recommendedrecipeapi.dart';
 import 'package:neighborchefapp/screens/recipe_share/detail_recipe1.dart';
-import 'package:neighborchefapp/screens/recipe_share/detail_recipe2.dart';
-import 'package:neighborchefapp/screens/recipe_share/detail_recipe3.dart';
-import 'package:neighborchefapp/screens/recipe_share/detail_recipe4.dart';
-import 'package:neighborchefapp/screens/recipe_share/detail_recipe5.dart';
 
 class RecommededRecipe extends StatefulWidget {
   const RecommededRecipe({Key? key}) : super(key: key);
@@ -26,7 +22,12 @@ class _RecommededRecipeState extends State<RecommededRecipe> {
             description: description[0],
             recipePicture: recipePicture[0],
             recipeBookmarkState: bookmark[0],
-            recipeImageDetail: DetailRecipe1(),
+            recipeImageDetail: detailRecipe(context,
+                recipeAuthor: authorName[0],
+                recipeName: recipeName[0],
+                recipePicture: recipePicture[0],
+                views: 10,
+                likeCount: 12),
             cardColorTheme: const Color(0xFFD18A8A)),
         RecipeCard(context,
             recipeName: recipeName[1],
@@ -34,7 +35,12 @@ class _RecommededRecipeState extends State<RecommededRecipe> {
             description: description[1],
             recipePicture: recipePicture[1],
             recipeBookmarkState: bookmark[1],
-            recipeImageDetail: DetailRecipe2(),
+            recipeImageDetail: detailRecipe(context,
+                recipeAuthor: authorName[1],
+                recipeName: recipeName[1],
+                recipePicture: recipePicture[1],
+                views: 10,
+                likeCount: 12),
             cardColorTheme: const Color(0xFF9E6868)),
         RecipeCard(context,
             recipeName: recipeName[2],
@@ -42,7 +48,12 @@ class _RecommededRecipeState extends State<RecommededRecipe> {
             description: description[2],
             recipePicture: recipePicture[2],
             recipeBookmarkState: bookmark[2],
-            recipeImageDetail: DetailRecipe3(),
+            recipeImageDetail: detailRecipe(context,
+                recipeAuthor: authorName[2],
+                recipeName: recipeName[2],
+                recipePicture: recipePicture[2],
+                views: 10,
+                likeCount: 12),
             cardColorTheme: const Color(0xFFD94E4E)),
         RecipeCard(context,
             recipeName: recipeName[3],
@@ -50,7 +61,12 @@ class _RecommededRecipeState extends State<RecommededRecipe> {
             description: description[3],
             recipePicture: recipePicture[3],
             recipeBookmarkState: bookmark[3],
-            recipeImageDetail: DetailRecipe4(),
+            recipeImageDetail: detailRecipe(context,
+                recipeAuthor: authorName[3],
+                recipeName: recipeName[3],
+                recipePicture: recipePicture[3],
+                views: 10,
+                likeCount: 12),
             cardColorTheme: const Color(0xFF521D1D)),
         RecipeCard(context,
             recipeName: recipeName[4],
@@ -58,7 +74,12 @@ class _RecommededRecipeState extends State<RecommededRecipe> {
             description: description[4],
             recipePicture: recipePicture[4],
             recipeBookmarkState: bookmark[4],
-            recipeImageDetail: DetailRecipe5(),
+            recipeImageDetail: detailRecipe(context,
+                recipeAuthor: authorName[4],
+                recipeName: recipeName[4],
+                recipePicture: recipePicture[4],
+                views: 10,
+                likeCount: 12),
             cardColorTheme: const Color(0xFF523636)),
       ],
     );
