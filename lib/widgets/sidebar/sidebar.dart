@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:neighborchefapp/screens/cooking_class/cooking_class_post.dart';
 import 'package:neighborchefapp/screens/food_share/food_shared_post.dart';
 import 'package:neighborchefapp/screens/etc/newpost.dart';
-//import 'package:neighborchefapp/screens/recipe_share/sharedrecipe.dart';
+import 'package:neighborchefapp/screens/food_share/food_share_detail.dart';
 import 'package:neighborchefapp/screens/village/village_main.dart';
 import 'package:neighborchefapp/screens/profile/myprofile.dart';
+import 'package:neighborchefapp/screens/cooking_class/cooking_class_detail.dart';
 
 Widget sideBar(BuildContext context) {
   var newpost = 'New Post';
@@ -12,7 +13,7 @@ Widget sideBar(BuildContext context) {
   var foodshare = 'Food share';
   var cookingclass = 'Cooking Class';
   var village = 'Village';
-  var userName = 'pepper';
+  var userName = 'User Name';
   var profilePicture = 'https://picsum.photos/250?image=100';
   return Container(
     width: MediaQuery.of(context).size.width * 1 / 2,
@@ -48,7 +49,11 @@ Widget sideBar(BuildContext context) {
                     children: [
                       Padding(
                         padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-                        child: Text(userName),
+                        child: Text(
+                          userName,
+                          softWrap: true,
+                          style: TextStyle(fontSize: 8),
+                        ),
                       )
                     ],
                   )
@@ -67,11 +72,11 @@ Widget sideBar(BuildContext context) {
           navigationButton(context,
               buttonname: foodshare,
               icon: Icons.food_bank,
-              id: FoodSharedPost()),
+              id: foodShareDetail(context)),
           navigationButton(context,
               buttonname: cookingclass,
               icon: Icons.class_,
-              id: CookingClassPost()),
+              id: cookingClassDetail(context)),
           navigationButton(context,
               buttonname: village, icon: Icons.home, id: VillageMain()),
           Padding(
