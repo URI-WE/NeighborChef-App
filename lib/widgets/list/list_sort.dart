@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
-// import 'package:neighborchefapp/lib/utils/styles.dart';
-// import 'package:neighborchefapp/lib/widgets/list/head_widget.dart';
+// import 'package:neighborchefapp/utils/styles.dart';
+// import 'package:neighborchefapp/widgets/list/head_widget.dart';
 
 // Widget ListSort({int a = 1}) {
 //   return Container(
@@ -48,7 +48,7 @@
 //                           NameWidget(index),
 //                           SizedBox(height: 10),
 //                           PriceWidget(index, size: 4),
-//                           SizedBox(height: 10),a
+//                           SizedBox(height: 10),
 //                           LocationDate(index, size: 1)
 //                         ],
 //                 ),
