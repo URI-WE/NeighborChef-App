@@ -1,8 +1,8 @@
 // import 'dart:ui';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-// import 'package:neighborchefapp/lib/utils/styles.dart';
-// import 'package:neighborchefapp/lib/widgets/list/head_widget.dart';
+// import 'package:neighborchefapp/utils/styles.dart';
+// import 'package:neighborchefapp/widgets/list/head_widget.dart';
 
 // Widget GridSort({int a = 1}) {
 //   return Container(
