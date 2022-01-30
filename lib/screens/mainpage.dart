@@ -1,10 +1,10 @@
-<<<<<<< Updated upstream
 import 'package:flutter/material.dart';
-import 'package:neighborchefapp/screens/mypage/myprofile.dart';
+import 'package:neighborchefapp/screens/profile/myprofile.dart';
 import 'package:neighborchefapp/widgets/sidebar/sidebar.dart';
-import 'package:neighborchefapp/widgets/sidebar/titlemenu.dart';
+import 'package:neighborchefapp/widgets/sidebar/appbar.dart';
 import 'package:neighborchefapp/widgets/etc/searchbar.dart';
-import 'package:neighborchefapp/widgets/etc/recommendedrecipe.dart';
+import 'package:neighborchefapp/widgets/etc/recommended_recipe.dart';
+import 'package:neighborchefapp/test/test_recommended_recipe.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -23,24 +23,26 @@ class _MainPageState extends State<MainPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appBar(
+          styleAppBar(
             context,
-            pagename: pageName,
-            id: MyProfile(),
-            //api를 통한 계정 프로필 사진 추가
+            styleAppBarIconText: '',
+            styleAppBarNavigate: MyProfile(),
+            styleAppBarTitle: pageName,
+            styleAppBarIcon2: null,
+            styleAppBarIconText2: '',
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: Text(
                 'What would you \nlike to cook?',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 24, fontFamily: 'poiret'),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
             child: Column(
               children: [
                 searchbar(context),
@@ -59,13 +61,10 @@ class _MainPageState extends State<MainPage> {
           ),
           Container(
             height: 330,
-            child: recommandedRecipe(),
+            child: TestRecommendedRecipe(),
           )
         ],
       ),
     );
   }
 }
-=======
-
->>>>>>> Stashed changes

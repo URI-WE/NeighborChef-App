@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:neighbor/utils/styles.dart';
+import 'package:neighborchefapp/utils/styles.dart';
 
 Widget LevelBar(int level, int per) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      SizedBox(height: 100),
       Row(
         children: [
           Text(
